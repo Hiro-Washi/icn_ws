@@ -1,3 +1,6 @@
 [submodule "zenoh_docker_simulator"]
 	path = zenoh_docker_simulator
 	url = https://github.com/Hiro-Washi/zenoh_docker_simulator
+[submodule "da_icn"]
+	path = da_icn
+	url = https://github.com/Hiro-Washi/da_icn
