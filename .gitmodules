@@ -1,0 +1,3 @@
+[submodule "zenoh_docker_simulator"]
+	path = zenoh_docker_simulator
+	url = https://github.com/Hiro-Washi/zenoh_docker_simulator

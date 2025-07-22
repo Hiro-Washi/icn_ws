@@ -1,7 +1,6 @@
 #!/bin/bash
 
-HOST_NAME = "yokolab"
-# 
+HOST_NAME = "yokolab" 
 sudo apt update
 
 # Network settings
