@@ -4,3 +4,6 @@
 [submodule "da_icn"]
 	path = da_icn
 	url = https://github.com/Hiro-Washi/da_icn
+[submodule "ndn_webcam"]
+	path = ndn_webcam
+	url = https://github.com/Hiro-Washi/ndn_webcam
