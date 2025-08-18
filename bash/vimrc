@@ -1,0 +1,86 @@
+" init_configにプラグイン設定を分たい人用
+"source ~/.vim/plugin_config.vim
+
+" Load/Write
+set encoding=utf-8
+scriptencoding utf-8
+set fileencoding=utf-8      " 保存時の文字コード
+set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
+set history=5000            " 保存するコマンド履歴の数
+set nobackup
+set noswapfile
+set hidden		    " 編集中で保存されていないファイルがあるときに他のファイルを開けるか
+set confirm		    " 保存されていない場合、vim を終了させようとした時に保存の確認を行う
+set autoread		    " 外部で変更があった時に自動的に読み込み直すか
+
+" Visual
+syntax on
+"colorscheme molokai
+"colorscheme hybrid
+set number                  " 行番号を表示
+set title
+set cmdheight=1
+set laststatus=2
+set showcmd
+"set showmatch matchtime=1  " 対応する括弧やブレースを表示
+set ambiwidth=double 	    " □や○文字が崩れる問題を解決
+set splitright		    " 画面を縦分割する際に右に開く
+
+"tab
+set expandtab
+set tabstop=2               " タブ表示幅
+set softtabstop=2	    " タブキー押下時に挿入される文字幅
+set autoindent
+set smartindent
+set shiftwidth=2	    "インデント幅
+set listchars=tab:▸\-\
+"indentline------------------------
+" Install command--->
+"$ git clone <https://github.com/Yggdroot/indentLine.git> ~/.vim/pack/vendor/start/indentLint
+"$ vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/indentLint/doc" -c "q"
+let g:indentLine_color_term =239
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '¦' "('|', '¦', '┆', ┊')
+"----------------------------------
+
+"Complement
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+"補完表示時のEnterで改行をしない
+set completeopt=menuone,noinsert " 補完対象1件でも表示,補完ウィンドウ表示時に挿入しない
+set wildmenu                     " コマンドモードの補完
+
+"Mouse, Clip board
+set clipboard=unnamed            " yank した文字列をクリップボードにコピー
+set mouse=a                      " マウス有効化
+"set ttymouse=xterm2
+"set scrolloff=5
+set scroll=5
+
+"Searching
+set incsearch
+set ignorecase		         " 検索時に大文字小文字を区別しない
+set smartcase
+set hlsearch
+nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+
+"Cursol
+set whichwrap=b,s,h,l,<,>,[,],~  " カーソル移動で行を跨いで移動出来る
+" set position of cursol ------- " Vimで開くときに最後に編集していたカーソル位置がおかれるようになる
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+"------------------------------
+"行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+
+"Keymaps
+inoremap <C-j> <Esc>
+inoremap <C-k> <C-u>
+inoremap <C-h> 0
+inoremap <C-l> $
+set backspace=indent,eol,start " バックスペースキーの有効化
+
