@@ -8,5 +8,5 @@
 	path = ndn_webcam
 	url = https://github.com/Hiro-Washi/ndn_webcam
 [submodule "cefore_docker_simulator"]
-  path = cefore_docker_simulator
-  url = https://github.com/Hiro-Washi/cefore_docker_simulator
+	path = cefore_docker_simulator
+	url = https://github.com/Hiro-Washi/cefore_docker_simulator
